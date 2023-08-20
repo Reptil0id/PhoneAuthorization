@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Phone Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'authentication/styles.css' %}">
+</head>
+
+<body>
+    <form id="phoneForm" method="post">
+        {% csrf_token %}
+        <input type="text" id="phoneNumber" name="phone_number">
+        <button type="button" id="submitBtn">Submit</button>
+    </form>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <input type="text" id="additionalInput" placeholder="Enter something">
+        </div>
+    </div>
+
+    <script src="{% static 'authentication/script.js' %}"></script>
+</body>
+
+</html>

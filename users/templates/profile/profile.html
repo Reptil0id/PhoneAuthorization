@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'profile/styles.css' %}">
+</head>
+
+<body>
+    <p>Номер телефона: {{ PhoneNumber }}</p>
+    <p>Введите реферальный код:</p>
+    <form id="referralCodeForm" method="post">
+        {% csrf_token %}
+        <input type="text" id="referralCode" name="referral_code">
+        <button type="button" id="submitBtn">Submit</button>
+    </form>
+
+    <script src="{% static 'profile/script.js' %}"></script>
+</body>
+
+</html>
